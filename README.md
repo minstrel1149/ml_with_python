@@ -30,3 +30,7 @@
     - linear_model.LogisticRegression(C, solver, penalty, max_iter)
     - 기본적으로 L2 Regularization 사용(solver='liblinear' 시 L1규제 사용 가능)
     - predict_proba() 메서드에서 sigmoid function을 적용한 확률값 제공
+6. Linear Model: etc
+    - SGDClassifier, SGDRegressor: 확률적 경사 하강법 활용
+        - linear_model.SGDClassifier(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
+        - linear_model.SGDRegressor(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
