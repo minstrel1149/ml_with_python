@@ -101,4 +101,5 @@
         - to be written
 2. PCA(Principal Component Analysis)
     - decomposition.PCA(n_components, whiten, random_state)
-    - components_ 속성
+    - inverse_transform() 메서드
+    - components_, explained_variance_ratio_, n_components_ 속성
