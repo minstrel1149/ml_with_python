@@ -35,7 +35,7 @@
     - SGDClassifier, SGDRegressor: 확률적 경사 하강법 활용
         - linear_model.SGDClassifier(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
         - linear_model.SGDRegressor(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
-7. Naive Bayes Model
+7. Naive Bayes Model(only Classification)
     - GaussianNB(연속적), BernoulliNB(이진), MultinomialNB(카운트)
     - naive_bayes.GaussianNB()
     - naive_bayes.BernoulliNB()
@@ -70,7 +70,11 @@
     - HistGradientBoosting
 12. Support Vector Machine
     - svm.SVC(kernel, C, gamma)
-    - svm.SVR()
+    - svm.SVR(kernel, C, gamma)
     - support_vectors_, dual_coef_ 속성
     - 하이퍼파라미터 설정과 데이터 스케일에 매우 민감, 샘플이 많으면 어려움
-13. 
+13. Neural Network: Multilayer Perceptron
+    - neural_network.MLPClassifier(solver, hidden_layer_sizes, max_iter, activation, alpha, random_state)
+    - neural_network.MLPRegressor(solver, hidden_layer_sizes, max_iter, activation, alpha, random_state)
+    - coefs_ 속성
+    - 데이터 스케일이 영향을 미침 → 표준화/정규화 필요
