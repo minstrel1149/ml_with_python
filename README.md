@@ -9,6 +9,7 @@
 1. fit(X, y), predict(X), score(X, y) 메서드
 2. train_test_split(X, y, stratify, random_state) 함수
 3. predict_proba() 메서드
+4. n_features_in_ 속성
 
 ### Chapter 2. 지도학습
 1. K-Nearest Neighbors
@@ -34,3 +35,15 @@
     - SGDClassifier, SGDRegressor: 확률적 경사 하강법 활용
         - linear_model.SGDClassifier(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
         - linear_model.SGDRegressor(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
+7. Naive Bayes Model
+    - GaussianNB(연속적), BernoulliNB(이진), MultinomialNB(카운트)
+    - naive_bayes.GaussianNB()
+    - naive_bayes.BernoulliNB()
+    - naive_bayes.MultinomialNB()
+    - 훈련과 예측 속도가 빠름 → 매우 큰 데이터셋에는 시도해볼만
+8. Decision Tree: Classification
+    - tree.DecisionTreeClassifier(max_depth, max_leaf_nodes, min_samples_leaf, ccp_alpha, criterion, random_state)
+    - feature_importances_ 속성
+9. Decision Tree: Regression
+    - tree.DecisionTreeRegressor(max_depth, max_leaf_nodes, min_samples_leaf, ccp_alpha, criterion, random_state)
+    - extrapolation(외삽)이 불가능 → 훈련 데이터 범위 밖 포인트 예측 불가
