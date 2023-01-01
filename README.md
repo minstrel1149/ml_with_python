@@ -78,3 +78,26 @@
     - neural_network.MLPRegressor(solver, hidden_layer_sizes, max_iter, activation, alpha, random_state)
     - coefs_ 속성
     - 데이터 스케일이 영향을 미침 → 표준화/정규화 필요
+
+### Chapter 3. 비지도 학습과 데이터 전처리
+1. Data Scale Preprocessing
+    - StandardScaler
+        - preprocessing.StandardScaler()
+        - mean을 0, variance를 1
+    - RobustScaler
+        - preprocessing.RobustScaler()
+        - median과 quartile을 사용
+    - MinMaxScaler
+        - preprocessing.MinMaxScaler()
+        - 모든 값들이 0과 1 사이에 위치
+    - Preprocessing: etc
+        - Normalizer: preprocessing.Normalizer()
+        - QuantileTransformer: preprocessing.QuantileTransformer(n_quantiles, output_distribution)
+        - PowerTransformer: preprocessing.PowerTransformer(method)
+        - 모든 scaler들은 훈련세트와 테스트세트에 같은 변환을 적용해야
+    - Preprocessing: Handling missing values
+        - impute.SimpleImputer(missing_values, strategy, fill_value)
+        - impute.KNNImputer(missing_values, n_neighbors, weights)
+        - to be written
+2. PCA(Principal Component Analysis)
+    - decomposition.PCA()
