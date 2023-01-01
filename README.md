@@ -8,7 +8,7 @@
 ### Chapter 1. 소개 및 기타
 1. fit(X, y), predict(X), score(X, y) 메서드
 2. train_test_split(X, y, stratify, random_state) 함수
-3. predict_proba() 메서드
+3. predict_proba(), decision_function() 메서드
 4. n_features_in_ 속성
 
 ### Chapter 2. 지도학습
@@ -41,30 +41,36 @@
     - naive_bayes.BernoulliNB()
     - naive_bayes.MultinomialNB()
     - 훈련과 예측 속도가 빠름 → 매우 큰 데이터셋에는 시도해볼만
-8. Decision Tree(Classification, Regression)
+8. Decision Tree
     - tree.DecisionTreeClassifier(max_depth, max_leaf_nodes, min_samples_leaf, ccp_alpha, criterion, random_state)
     - tree.DecisionTreeRegressor(max_depth, max_leaf_nodes, min_samples_leaf, ccp_alpha, criterion, random_state)
     - feature_importances_ 속성
     - 회귀의 경우 extrapolation(외삽)이 불가능 → 훈련 데이터 범위 밖 포인트 예측 불가
-9. Ensemble: RandomForest(Classification, Regression)
+9. Ensemble: RandomForest
     - ensemble.RandomForestClassifier(n_estimators, bootstrap, max_samples, max_features, n_jobs, etc(== decision tree))
     - ensemble.RandomForestRegressor(n_estimators, bootstrap, max_samples, max_features, n_jobs, etc(== decision tree))
     - estimators_, feature_importances_ 속성
     - 개개의 트리보다 덜 과대적합되고 훨씬 좋은 결정 경계
     - 텍스트 데이터 같은 높은 차원의 희소한 데이터에는 잘 작동하지 않음 → 선형 모델이 더 적합
-10. Ensemble: GradientBoosting(Classification, Regression)
+10. Ensemble: GradientBoosting
     - ensemble.GradientBoostingClassifier(n_estimators, learning_rate, loss, random_state, etc(== decision tree))
     - ensemble.GradientBoostingRegressor(n_estimators, learning_rate, loss, random_state, etc(== decision tree))
     - GradientBoosting에서는 n_estimators를 키우면 과대적합될 가능성
     - GradientBoosting에서는 max_depth를 매우 작게 설정할 필요 → 약한 학습기에서 시작
 11. Ensemble: etc
-    - Bagging(Classification, Regressor)
+    - Bagging
         - ensemble.BaggingClassifier(estimator, n_estimators, max_samples, oob_score, random_state, n_jobs)
         - ensemble.BaggingRegressor(estimator, n_estimators, max_samples, oob_score, random_state, n_jobs)
         - RandomForest도 oob_score 지원
-    - ExtraTree(Classification, Regressor)
-    - AdaBoost(Classification, Regressor)
+    - ExtraTree
+    - AdaBoost
         - ensemble.AdaBoostClassifier(estimator, n_estimators, learning_rate, random_state)
         - ensemble.AdaBoostRegressor(estimator, n_estimators, learning_rate, random_state)
         - 이전 모델이 잘못 분류한 샘플에 가중치를 높여 다음 모델을 훈련
-    - HistGradientBoosting(Classification, Regressor)
+    - HistGradientBoosting
+12. Support Vector Machine
+    - svm.SVC(kernel, C, gamma)
+    - svm.SVR()
+    - support_vectors_, dual_coef_ 속성
+    - 하이퍼파라미터 설정과 데이터 스케일에 매우 민감, 샘플이 많으면 어려움
+13. 
