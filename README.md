@@ -100,4 +100,5 @@
         - impute.KNNImputer(missing_values, n_neighbors, weights)
         - to be written
 2. PCA(Principal Component Analysis)
-    - decomposition.PCA()
+    - decomposition.PCA(n_components, whiten, random_state)
+    - components_ 속성
