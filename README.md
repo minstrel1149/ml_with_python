@@ -103,3 +103,11 @@
     - decomposition.PCA(n_components, whiten, random_state)
     - inverse_transform() 메서드
     - components_, explained_variance_ratio_, n_components_ 속성
+3. NMF(Non-negative Matrix Factorization)
+    - decomposition.NMF(n_components, init, tol, max_iter, random_state)
+    - 덮어써진 데이터에서 원본 성분을 구하는데 유용 + NMF로 생성한 성분은 순서가 없음
+4. t-SNE(t-distribution Stochastic Neighbor Embedding)
+    - manifold.TSNE(n_components, init, perplexity, random_state)
+    - 훈련 데이터를 새로운 표현으로 변환, but 새로운 데이터에는 적용 불가능 → transform() 메서드 미존재
+5. Clustering: K-Means
+    - cluster.KMeans()
