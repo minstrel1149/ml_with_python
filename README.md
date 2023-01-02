@@ -110,4 +110,7 @@
     - manifold.TSNE(n_components, init, perplexity, random_state)
     - 훈련 데이터를 새로운 표현으로 변환, but 새로운 데이터에는 적용 불가능 → transform() 메서드 미존재
 5. Clustering: K-Means
-    - cluster.KMeans()
+    - cluster.KMeans(n_clusters, random_state)
+    - labels_, cluster_centers_, inertia_ 속성
+    - transform() 메서드가 반환하는 값은 데이터 포인트에서 각 클러스터 중심까지의 거리
+    - K-Means는 모든 클러스터의 반경이 동일, 모든 방향이 똑같이 중요하다는 가정
