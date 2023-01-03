@@ -114,3 +114,19 @@
     - labels_, cluster_centers_, inertia_ 속성
     - transform() 메서드가 반환하는 값은 데이터 포인트에서 각 클러스터 중심까지의 거리
     - K-Means는 모든 클러스터의 반경이 동일, 모든 방향이 똑같이 중요하다는 가정
+6. Clustering: Agglomerative Clustering
+    - cluster.AgglomerativeClustering(n_clusters, linkage)
+    - 새로운 데이터 포인트 예측이 불가하므로 predict() 메서드 미존재 → fit_predict() 메서드 활용
+    - children_, distances_ 속성
+7. Clustering: DBSCAN
+    - cluster.DBSCAN(min_samples, eps)
+    - 한 데이터 포인트에서 eps 거리 안에 데이터가 min_samples 개수만큼 들어있으면 핵심 샘플로 분류
+    - 데이터의 밀집 지역이 한 군집을 구성 → 클러스터 개수 미리 지정 불필요
+    - 새로운 데이터 포인트 예측이 불가하므로 predict() 메서드 미존재 → fit_predict() 메서드 활용
+8. 군집 알고리즘의 비교와 평가
+    - ARI
+        - metrics.cluster.adjusted_rand_score(y, pred)
+    - Silhouette coefficient
+        - metrics.cluster.silhouette_score(X, pred)
+        - 군집의 밀집 정도를 계산 → 모양이 복잡할 때는 잘 안들어맞는 문제
+    - 군집 평가에 더 적합한 전략은 견고성 기반(robustness-based) → Scikit-Learn에는 미구현
