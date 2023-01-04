@@ -145,4 +145,6 @@
     - sklearn.preprocessing.KBinsDiscretizer(n_bins, strategy, encode)
     - bin_edges_ 속성
 3. Feature Encoding: Interaction & Polynomial Features
-    - sklearn.preprocessing.PolynomialFeatures()
+    - sklearn.preprocessing.PolynomialFeatures(degree, include_bias, interaction_only)
+    - get_feature_names_out() 메서드
+    - cf. np.log(), np.exp() 등을 활용하여 분포를 정규분포와 비슷하게 만들수도
