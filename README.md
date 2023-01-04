@@ -132,8 +132,17 @@
     - 군집 평가에 더 적합한 전략은 견고성 기반(robustness-based) → Scikit-Learn에는 미구현
 
 ### Chapter 4. 데이터 표현과 특성 공학
-1. Variables Encoding: Categorical Variables
-    - One-Hot-Encoding(Dummy Variables)
-        - pandas.get_dummies(df, columns)
-        - sklearn.preprocessing.OneHotEncoder()
-        - sklearn.compose.ColumnTransformer()
+1. Variables Encoding: One-Hot-Encoding(Dummy Variables)
+    - pandas.get_dummies(df, columns)
+    - sklearn.preprocessing.OneHotEncoder(sparse)
+        - get_feature_names_out() 메서드
+        - 모든 열에 인코딩 수행
+    - sklearn.compose.ColumnTransformer([(name, estimator, columns)])
+        - named_transformers_ 속성
+        - 변환된 출력열에 대응하는 입력열을 찾지 못하는 것이 단점
+    - sklearn.compose.make_column_transformer((estimator, columns))
+2. Variables Encoding: Discretization(Binning)
+    - sklearn.preprocessing.KBinsDiscretizer(n_bins, strategy, encode)
+    - bin_edges_ 속성
+3. Feature Encoding: Interaction & Polynomial Features
+    - sklearn.preprocessing.PolynomialFeatures()
