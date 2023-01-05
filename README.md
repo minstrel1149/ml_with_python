@@ -148,3 +148,10 @@
     - sklearn.preprocessing.PolynomialFeatures(degree, include_bias, interaction_only)
     - get_feature_names_out() 메서드
     - cf. np.log(), np.exp() 등을 활용하여 분포를 정규분포와 비슷하게 만들수도
+4. Feature Selection
+    - sklearn.feature_selection.SelectKBest(score_func, k)
+        - get_support() 메서드
+    - sklearn.feature_selection.SelectPercentile(score_func, percentile)
+    - sklearn.feature_selection.SelectFromModel(estimator, threshold)
+        - 특성의 중요도를 측정할 수 있는 모델이어야 → Decision Tree 기반, Linear 기반 등
+    - sklearn.feature_selection.RFE(estimator, n_features_to_select)
