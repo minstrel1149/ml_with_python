@@ -155,3 +155,16 @@
     - sklearn.feature_selection.SelectFromModel(estimator, threshold)
         - 특성의 중요도를 측정할 수 있는 모델이어야 → Decision Tree 기반, Linear 기반 등
     - sklearn.feature_selection.RFE(estimator, n_features_to_select)
+
+### Chapter 5. 모델 평가와 성능 향상
+1. Cross Validation
+    - sklearn.model_selection.cross_validate(estimator, X, y, cv, groups, return_train_score)
+    - sklearn.model_selection.cross_val_score(estimator, X, y, cv, groups)
+    - Cross Validation Splitter
+        - sklearn.model_selection.(Stratified)KFold(n_splits, shuffle, random_state)
+        - sklearn.model_selection.LeaveOneOut()
+        - sklearn.model_selection.(Stratified)ShuffleSplit(train_size, test_size, n_splits)
+        - sklearn.model_selection.(Stratified)GroupKFold(n_splits)
+        - sklearn.model_selection.Repeated(Stratified)KFold(n_splits, n_repeats)
+2. Grid Search
+    - sklearn.model_selection.GridSearchCV()
