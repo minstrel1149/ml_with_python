@@ -170,3 +170,16 @@
     - sklearn.model_selection.GridSearchCV(estimator, param_grid, cv, return_train_score, n_jobs)
     - sklearn.model_selection.RandomizedSearchCV(estimator, param_distribution, n_iter, cv, return_train_score, n_jobs)
     - best_params_, best_estimator_, best_score_, cv_results_ 속성
+3. Imbalanced Datasets
+    - imblearn.under_sampling.RandomUnderSampler(sampling_strategy, random_state)
+    - imblearn.over_sampling.RandomOverSampler(sampling_strategy, random_state)
+    - imblearn.over_sampling.SMOTE(sampling_strategy, k_neighbors, random_state)
+    - fit_resample() 메서드
+4. Confusion Matrix
+    - Confusion Matrix
+        - sklearn.metrics.confusion_matrix(y_test, y_pred)
+        - sklearn.metrics.ConfusionMatrixDisplay.from_estimator(estimator, X_test, y_test, display_labels=[neg, pos])
+        - sklearn.metrics.ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels=[neg, pos])
+    - Precision, Recall(TP Rate)
+        - sklearn.metrics.f1_score(y_test, y_pred)
+        - sklearn.metrics.classification_report(y_test, y_pred, target_names=[neg, pos], zero_division)
