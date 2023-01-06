@@ -158,8 +158,8 @@
 
 ### Chapter 5. 모델 평가와 성능 향상
 1. Cross Validation
-    - sklearn.model_selection.cross_validate(estimator, X, y, cv, groups, return_train_score)
-    - sklearn.model_selection.cross_val_score(estimator, X, y, cv, groups)
+    - sklearn.model_selection.cross_validate(estimator, X, y, cv, groups, return_train_score, n_jobs)
+    - sklearn.model_selection.cross_val_score(estimator, X, y, cv, groups, n_jobs)
     - Cross Validation Splitter
         - sklearn.model_selection.(Stratified)KFold(n_splits, shuffle, random_state)
         - sklearn.model_selection.LeaveOneOut()
@@ -167,4 +167,6 @@
         - sklearn.model_selection.(Stratified)GroupKFold(n_splits)
         - sklearn.model_selection.Repeated(Stratified)KFold(n_splits, n_repeats)
 2. Grid Search
-    - sklearn.model_selection.GridSearchCV()
+    - sklearn.model_selection.GridSearchCV(estimator, param_grid, cv, return_train_score, n_jobs)
+    - sklearn.model_selection.RandomizedSearchCV(estimator, param_distribution, n_iter, cv, return_train_score, n_jobs)
+    - best_params_, best_estimator_, best_score_, cv_results_ 속성
