@@ -198,3 +198,14 @@
     - sklearn.pipeline.Pipeline([(name, estimator)])
     - sklearn.pipeline.make_pipeline(estimator)
     - steps, named_steps 속성
+
+### Chapter 7. 텍스트 데이터 다루기
+1. Bag of words
+    - CountVectorizer
+        - sklearn.feature_extraction.text.Countvectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df)
+        - get_feature_names_out() 메서드 → BOW에 저장된 각 단어
+        - vocabulary_ 속성
+    - TfidfVectorizer
+        - 
+    - etc
+        - sklean.feature_extraction.text.ENGLISH_STOP_WORDS를 이용한 불용어 제거 가능
