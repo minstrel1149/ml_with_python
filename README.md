@@ -1,4 +1,4 @@
-# 파이썬 라이브러를 활용한 머신러닝 - Andreas Muller 등 저
+# 파이썬 라이브러리를 활용한 머신러닝 - Andreas Muller 등 저
 ### 중요사항
 1. Scikit-Learn의 기초 부분을 보고 복습할 수 있도록 다시 학습 및 코드 추가
 2. 책에 있는 코드를 단순히 따라하는 것이 아니라 나만의 코드로 작성
@@ -9,7 +9,8 @@
 1. fit(X, y), predict(X), score(X, y) 메서드
 2. train_test_split(X, y, stratify, random_state) 함수
 3. predict_proba(X_test), decision_function(X_test) 메서드
-4. n_features_in_ 속성
+4. get_feature_names_out() 메서드
+5. n_features_in_ 속성
 
 ### Chapter 2. 지도학습
 1. K-Nearest Neighbors
@@ -213,9 +214,24 @@
         - spacy.load('en_core_web_sm', disable=['parser', 'ner'])
         - lemma_ 속성
         - CountVectorizer 등의 tokenizer 파라미터와 연결
+    - 한글 형태소 분석
+        - konlpy.tag.Okt → PicklableOkt() 클래스 생성(__getstate__, __setstate__)
+        - tokenizer=okt.morphs
     - etc
         - sklean.feature_extraction.text.ENGLISH_STOP_WORDS를 이용한 불용어 제거 가능
 2. Topic Modelling
     - Latent Dirichlet Allocation
         - sklearn.decomposition.LatentDirichletAllocation(n_components, learning_method, max_iter, random_state, n_jobs)
         - components_ 속성
+        - mglearn.tools.print_topics(topics, feature_names, sorting, topics_per_chunk, n_words) 활용
+
+### Chapter 8. 통계분석(ADP/빅분기 한 권으로 끝내기)
+0. 기타
+    - 정규성 검정
+        - scipy.stats.shapiro(data)
+        - 귀무가설: 정규성을 가진다 / 대립가설:정규성을 가지지 않는다
+1. T-Test
+    - One Sample T-Test
+        - scipy.stats.ttest_1samp(data, popmean, alternative)
+        - scipy.wilcoxon(data-mu, alternative)
+    - Paired Sample T-Test
