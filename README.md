@@ -192,3 +192,9 @@
         - sklearn.metrics.RocCurveDisplay.from_estimator(estimator, X_test, y_test, name)
         - sklearn.metrics.RocCurveDisplay.from_predictions(X_test, y_predict_proba, name)
     - sklearn.metrics.SCORERS.keys()
+
+### Chapter 6. 알고리즘 체인과 파이프라인
+1. Pipeline
+    - sklearn.pipeline.Pipeline([(name, estimator)])
+    - sklearn.pipeline.make_pipeline(estimator)
+    - steps, named_steps 속성
