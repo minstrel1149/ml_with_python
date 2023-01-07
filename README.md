@@ -203,11 +203,19 @@
 ### Chapter 7. 텍스트 데이터 다루기
 1. Bag of words
     - CountVectorizer
-        - sklearn.feature_extraction.text.Countvectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df)
+        - sklearn.feature_extraction.text.Countvectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df, max_features)
         - get_feature_names_out() 메서드 → BOW에 저장된 각 단어
         - vocabulary_ 속성
     - TfidfVectorizer
-        - sklearn.feature_extraction.text.TfidfVectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df)
+        - sklearn.feature_extraction.text.TfidfVectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df, max_features)
         - sklearn.feature_extraction.text.TfidfTransformer()
+    - Tokenization
+        - spacy.load('en_core_web_sm', disable=['parser', 'ner'])
+        - lemma_ 속성
+        - CountVectorizer 등의 tokenizer 파라미터와 연결
     - etc
         - sklean.feature_extraction.text.ENGLISH_STOP_WORDS를 이용한 불용어 제거 가능
+2. Topic Modelling
+    - Latent Dirichlet Allocation
+        - sklearn.decomposition.LatentDirichletAllocation(n_components, learning_method, max_iter, random_state, n_jobs)
+        - components_ 속성
