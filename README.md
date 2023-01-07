@@ -158,8 +158,8 @@
 
 ### Chapter 5. 모델 평가와 성능 향상
 1. Cross Validation
-    - sklearn.model_selection.cross_validate(estimator, X, y, cv, groups, return_train_score, n_jobs)
-    - sklearn.model_selection.cross_val_score(estimator, X, y, cv, groups, n_jobs)
+    - sklearn.model_selection.cross_validate(estimator, X, y, cv, groups, return_train_score, scoring, n_jobs)
+    - sklearn.model_selection.cross_val_score(estimator, X, y, cv, groups, scoring, n_jobs)
     - Cross Validation Splitter
         - sklearn.model_selection.(Stratified)KFold(n_splits, shuffle, random_state)
         - sklearn.model_selection.LeaveOneOut()
@@ -167,8 +167,8 @@
         - sklearn.model_selection.(Stratified)GroupKFold(n_splits)
         - sklearn.model_selection.Repeated(Stratified)KFold(n_splits, n_repeats)
 2. Grid Search
-    - sklearn.model_selection.GridSearchCV(estimator, param_grid, cv, return_train_score, n_jobs)
-    - sklearn.model_selection.RandomizedSearchCV(estimator, param_distribution, n_iter, cv, return_train_score, n_jobs)
+    - sklearn.model_selection.GridSearchCV(estimator, param_grid, cv, return_train_score, scoring, n_jobs)
+    - sklearn.model_selection.RandomizedSearchCV(estimator, param_distribution, n_iter, cv, return_train_score, scoring, n_jobs)
     - best_params_, best_estimator_, best_score_, cv_results_ 속성
 3. Imbalanced Datasets
     - imblearn.under_sampling.RandomUnderSampler(sampling_strategy, random_state)
@@ -177,12 +177,18 @@
     - fit_resample() 메서드
 4. Confusion Matrix
     - Confusion Matrix
-        - sklearn.metrics.confusion_matrix(y_test, y_pred)
+        - sklearn.metrics.confusion_matrix(y_true, y_pred)
         - sklearn.metrics.ConfusionMatrixDisplay.from_estimator(estimator, X_test, y_test, display_labels=[neg, pos])
-        - sklearn.metrics.ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels=[neg, pos])
+        - sklearn.metrics.ConfusionMatrixDisplay.from_predictions(y_true, y_pred, display_labels=[neg, pos])
     - Precision, Recall(TP Rate)
-        - sklearn.metrics.f1_score(y_test, y_pred)
-        - sklearn.metrics.classification_report(y_test, y_pred, target_names=[neg, pos], zero_division)
-        - sklearn.metrics.precision_recall_curve(y_test, y_predict_proba)
-        - sklearn.metrics.average_precsion_score(y_test, y_predcit_proba)
+        - sklearn.metrics.f1_score(y_true, y_pred, average)
+        - sklearn.metrics.classification_report(y_true, y_pred, target_names=[neg, pos], zero_division)
+        - sklearn.metrics.precision_recall_curve(y_true, y_predict_proba)
+        - sklearn.metrics.average_precsion_score(y_true, y_predcit_proba)
         - sklearn.metrics.PrecisionRecallDisplay.from_estimator(estimator, X_test, y_test)
+    - ROC Curve, AUC
+        - sklearn.metrics.roc_curve(y_true, y_predict_proba)
+        - sklearn.metrics.roc_auc_score(y_true, y_predict_proba)
+        - sklearn.metrics.RocCurveDisplay.from_estimator(estimator, X_test, y_test, name)
+        - sklearn.metrics.RocCurveDisplay.from_predictions(X_test, y_predict_proba, name)
+    - sklearn.metrics.SCORERS.keys()
