@@ -31,6 +31,7 @@
     - sklearn.linear_model.LogisticRegression(C, solver, penalty, max_iter)
     - 기본적으로 L2 Regularization 사용(solver='liblinear' 시 L1규제 사용 가능)
     - predict_proba() 메서드에서 sigmoid function을 적용한 확률값 제공
+    - mglearn.tools.visualize_coefficients(coef, feature_names, n_top_features) 활용
 6. Linear Model: etc
     - SGDClassifier, SGDRegressor: 확률적 경사 하강법 활용
         - sklearn.linear_model.SGDClassifier(alpha, learning_rate, eta0, loss, penalty, random_state, n_jobs)
@@ -206,6 +207,7 @@
         - get_feature_names_out() 메서드 → BOW에 저장된 각 단어
         - vocabulary_ 속성
     - TfidfVectorizer
-        - 
+        - sklearn.feature_extraction.text.TfidfVectorizer(tokenizer, stop_words, token_pattern, ngram_range, min_df, max_df)
+        - sklearn.feature_extraction.text.TfidfTransformer()
     - etc
         - sklean.feature_extraction.text.ENGLISH_STOP_WORDS를 이용한 불용어 제거 가능
