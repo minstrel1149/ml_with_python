@@ -230,8 +230,27 @@
     - 정규성 검정
         - scipy.stats.shapiro(data)
         - 귀무가설: 정규성을 가진다 / 대립가설:정규성을 가지지 않는다
-1. T-Test
+    - 등분산성 검정
+        - scipy.stats.levene(data1, data2, ...)
+        - 귀무가설: 등분산성을 만족한다 / 대립가설: 등분산성을 만족하지 않는다
+1. T-Test: t-test, wilcoxon
     - One Sample T-Test
         - scipy.stats.ttest_1samp(data, popmean, alternative)
-        - scipy.wilcoxon(data-mu, alternative)
+        - scipy.wilcoxon(data - mu, alternative)
     - Paired Sample T-Test
+        - scipy.stats.ttest_rel(data_after, data_before, alternative)
+        - scipy.wilcoxon(data_after - data_before, alternative)
+    - Independent Sample T-Test
+        - scipy.stats.ttest_ind(data1, data2, equal_var, alternative)
+        - scipy.wilcoxon(data1 - data2, alternative)
+2. ANOVA: f-test, welch_anova, kruskal
+    - One-way Anova
+        - scipy.stats.f_oneway(data1, data2, ...)
+        - pingouin.welch_anova(data, dv, between)
+        - scipy.stats.kruskal(data1, data2, ...)
+    - Two-way Anova
+        - statsmodels.formula.api.ols(formula, data)
+        - statsmodels.stats.anova.anova_lm(model, typ)
+    - POST-HOC
+        - statsmodels.stats.multicomp.MultiComparison(data, groups)
+        - statsmodels.stats.multicomp.pairwise_tukeyhsd()
