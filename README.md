@@ -8,7 +8,7 @@
 ### Chapter 1. 소개 및 기타
 1. fit(X, y), predict(X), score(X, y) 메서드
 2. train_test_split(X, y, stratify, random_state) 함수
-3. predict_proba(), decision_function() 메서드
+3. predict_proba(X_test), decision_function(X_test) 메서드
 4. n_features_in_ 속성
 
 ### Chapter 2. 지도학습
@@ -69,8 +69,8 @@
         - 이전 모델이 잘못 분류한 샘플에 가중치를 높여 다음 모델을 훈련
     - HistGradientBoosting
 12. Support Vector Machine
-    - sklearn.svm.SVC(kernel, C, gamma)
-    - sklearn.svm.SVR(kernel, C, gamma)
+    - sklearn.svm.SVC(kernel, C, gamma, probability)
+    - sklearn.svm.SVR(kernel, C, gamma, probability)
     - support_vectors_, dual_coef_ 속성
     - 하이퍼파라미터 설정과 데이터 스케일에 매우 민감, 샘플이 많으면 어려움
 13. Neural Network: Multilayer Perceptron
@@ -183,3 +183,6 @@
     - Precision, Recall(TP Rate)
         - sklearn.metrics.f1_score(y_test, y_pred)
         - sklearn.metrics.classification_report(y_test, y_pred, target_names=[neg, pos], zero_division)
+        - sklearn.metrics.precision_recall_curve(y_test, y_predict_proba)
+        - sklearn.metrics.average_precsion_score(y_test, y_predcit_proba)
+        - sklearn.metrics.PrecisionRecallDisplay.from_estimator(estimator, X_test, y_test)
