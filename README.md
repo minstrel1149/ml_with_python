@@ -249,8 +249,20 @@
         - pingouin.welch_anova(data, dv, between)
         - scipy.stats.kruskal(data1, data2, ...)
     - Two-way Anova
-        - statsmodels.formula.api.ols(formula, data)
+        - statsmodels.formula.api.ols(formula, data).fit()
         - statsmodels.stats.anova.anova_lm(model, typ)
     - POST-HOC
         - statsmodels.stats.multicomp.MultiComparison(data, groups)
         - statsmodels.stats.multicomp.pairwise_tukeyhsd()
+3. Chi-Square Test
+    - Goodness of fit test
+        - scipy.stats.chisquare(f_obs, f_exp, ddof, axis)
+    - Test of Contingency(Independence)
+        - scipy.stats.chi2_contingency(observed)
+4. Linear Regression
+    - Linear Regression
+        - statsmodels.formula.api.ols(formula, data).fit()
+        - summary(), predict() 메서드
+        - params(coefficient) 속성
+    - Multicollinearity: Correlation, VIF(Variance Inflation Factor)
+        - 
