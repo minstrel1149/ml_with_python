@@ -279,3 +279,12 @@
         - mlxtend.preprocessing.TransactionEncoder() → columns_ 속성
         - mlxtend.frequent_patterns.apriori(df, min_support, use_colnames)
         - mlxtend.frequent_patterns.association_rules(df, metric, min_threshold)
+6. Time Series Analysis
+    - Seasonal Decomposition
+        - statsmodels.tsa.seasonal.seasonal_decompose(ts, model)
+    - Seasonal Data Stationary
+        - statsmodels.tsa.stattools.adfuller(x, regression) → 정상성 여부 검정
+        - 정상성 여부 확인 후 로그변환 혹은 차분 진행
+    - AR(Auto Regressive) / MA(Moving Average) Model
+        - statsmodels.graphics.tsaplots.plot_acf[AR]/plot_pacf[MA]
+    - ARIMA Model
