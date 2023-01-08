@@ -116,16 +116,21 @@
     - labels_, cluster_centers_, inertia_ 속성
     - transform() 메서드가 반환하는 값은 데이터 포인트에서 각 클러스터 중심까지의 거리
     - K-Means는 모든 클러스터의 반경이 동일, 모든 방향이 똑같이 중요하다는 가정
+    - inertia_ 속성을 활용한 엘보우 기법 + calinski_harabasz_score(X, labels) 함수를 활용하여 최적 K 선택
 6. Clustering: Agglomerative Clustering
     - sklearn.cluster.AgglomerativeClustering(n_clusters, linkage)
     - 새로운 데이터 포인트 예측이 불가하므로 predict() 메서드 미존재 → fit_predict() 메서드 활용
     - children_, distances_ 속성
-7. Clustering: DBSCAN
+7. Clustering: Hierarchical Clustering
+    - scipy.cluster.hierarchy.linkage(X, method, metric)
+    - scipy.cluster.hierarchy.dendrogram(linkage_result, orientation, labels, color_threshold)
+    - scipy.cluster.hierarchy.fcluster(linkage_result, t, criterion)
+8. Clustering: DBSCAN
     - sklearn.cluster.DBSCAN(min_samples, eps)
     - 한 데이터 포인트에서 eps 거리 안에 데이터가 min_samples 개수만큼 들어있으면 핵심 샘플로 분류
     - 데이터의 밀집 지역이 한 군집을 구성 → 클러스터 개수 미리 지정 불필요
     - 새로운 데이터 포인트 예측이 불가하므로 predict() 메서드 미존재 → fit_predict() 메서드 활용
-8. 군집 알고리즘의 비교와 평가
+9. 군집 알고리즘의 비교와 평가
     - ARI
         - sklearn.metrics.cluster.adjusted_rand_score(y, pred)
     - Silhouette coefficient
@@ -264,5 +269,6 @@
         - statsmodels.formula.api.ols(formula, data).fit()
         - summary(), predict() 메서드
         - params(coefficient) 속성
+        - patsy.dmatrices(formula, data, return_type) 활용 가능
     - Multicollinearity: Correlation, VIF(Variance Inflation Factor)
-        - 
+        - statsmodels.stats.outliers_influence.variance_inflation_factor(X.values, i)
