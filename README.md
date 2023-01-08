@@ -283,8 +283,12 @@
     - Seasonal Decomposition
         - statsmodels.tsa.seasonal.seasonal_decompose(ts, model)
     - Seasonal Data Stationary
-        - statsmodels.tsa.stattools.adfuller(x, regression) → 정상성 여부 검정
+        - statsmodels.tsa.stattools.adfuller(ts, regression) → 정상성 여부 검정
         - 정상성 여부 확인 후 로그변환 혹은 차분 진행
     - AR(Auto Regressive) / MA(Moving Average) Model
         - statsmodels.graphics.tsaplots.plot_acf[AR]/plot_pacf[MA]
-    - ARIMA Model
+    - ARIMA Model → auto_arima Model
+        - statsmodels.tsa.arima.model.ARIMA(ts, order, trend)
+            - forecast(steps, alpha) 메서드
+        - pmdarima.auto_arima(ts, seasonal, m, d, start_p, max_p, start_q, max_q, start_P, max_P, start_Q, max_Q, information_criterion)
+            - predict(n_periods) 메서드
