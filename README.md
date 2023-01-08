@@ -272,3 +272,10 @@
         - patsy.dmatrices(formula, data, return_type) 활용 가능
     - Multicollinearity: Correlation, VIF(Variance Inflation Factor)
         - statsmodels.stats.outliers_influence.variance_inflation_factor(X.values, i)
+5. Association Analysis
+    - Run Test
+        - statsmodles.sandbox.stats.runs.runstest_1samp(binary_data, cutoff, correction)
+    - Association Rules
+        - mlxtend.preprocessing.TransactionEncoder() → columns_ 속성
+        - mlxtend.frequent_patterns.apriori(df, min_support, use_colnames)
+        - mlxtend.frequent_patterns.association_rules(df, metric, min_threshold)
